@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Neon Snake</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              game: {
+                bg: '#0f172a', // slate-900
+                board: '#1e293b', // slate-800
+                snake: '#4ade80', // green-400
+                snakeHead: '#22c55e', // green-500
+                food: '#ef4444', // red-500
+                grid: '#334155', // slate-700
+              }
+            },
+            animation: {
+              'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'bounce-small': 'bounce 0.5s infinite',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Prevent touch behaviors like pull-to-refresh on mobile */
+      body {
+        overscroll-behavior-y: contain;
+        touch-action: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-game-bg text白色 h-screen w-screen overflow-hidden select-none">
+    <div id="root" class="h-full w-full"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
