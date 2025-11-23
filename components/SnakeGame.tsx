@@ -139,7 +139,7 @@ export const SnakeGame: React.FC = () => {
             <XCircle className="w-16 h-16 text-white mb-4 opacity-80" />
             <h2 className="text-4xl font-bold text-white mb-2">GAME OVER</h2>
             <p className="text-xl text-white/80 mb-6">Score: {score}</p>
-            <button onClick={startGame} className="flex items中心 gap-2 px-6 py-3 bg-white text-red-600 font-bold rounded-full transition-transform hover:scale-105 active:scale-95 shadow-xl">
+            <button onClick={startGame} className="flex items-center gap-2 px-6 py-3 bg-white text-red-600 font-bold rounded-full transition-transform hover:scale-105 active:scale-95 shadow-xl">
               <RefreshCcw className="w-5 h-5" />
               TRY AGAIN
             </button>
