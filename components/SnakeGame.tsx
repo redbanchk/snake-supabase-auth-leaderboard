@@ -9,7 +9,6 @@ import { supabase } from '../supabase/client';
 import AuthModal from './AuthModal';
 import Leaderboard from './Leaderboard';
 
-// Helper to generate random food not on snake
 const generateFood = (snake: Point[]): Point => {
   if (snake.length >= BOARD_SIZE * BOARD_SIZE) {
     return { x: -1, y: -1 };
@@ -87,7 +86,7 @@ export const SnakeGame: React.FC = () => {
 
   return (
     <div className="flex items-start justify-center w-full max-w-5xl mx-auto p-4 h-full gap-4">
-      <div className="flex w-full justify之间 items-center mb-4 bg-game-board p-3 rounded-xl border border-game-grid shadow-lg">
+      <div className="flex w-full justify-between items-center mb-4 bg-game-board p-3 rounded-xl border border-game-grid shadow-lg">
         <div className="flex items-center gap-2">
            <div className="p-2 bg-yellow-900/30 rounded-full">
              <Trophy className="w-5 h-5 text-yellow-500" />
@@ -126,8 +125,8 @@ export const SnakeGame: React.FC = () => {
 
         {status === GameStatus.IDLE && (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/70 backdrop-blur-sm rounded-lg z-20">
-            <h1 className="text-5xl font-black text透明 bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 mb-6 drop-shadow-lg tracking-tighter">SNAKE</h1>
-            <button onClick={startGame} className="flex items-center gap-2 px-8 py-3 bg-green-500 hover:bg-green-600 text白色 font-bold rounded-full transition-all hover:scale-105 active:scale-95 shadow-lg shadow-green-500/30">
+            <h1 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 mb-6 drop-shadow-lg tracking-tighter">SNAKE</h1>
+            <button onClick={startGame} className="flex items-center gap-2 px-8 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-full transition-all hover:scale-105 active:scale-95 shadow-lg shadow-green-500/30">
               <Play className="w-5 h-5" fill="currentColor" />
               START GAME
             </button>
@@ -137,10 +136,10 @@ export const SnakeGame: React.FC = () => {
 
         {status === GameStatus.GAME_OVER && (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-red-900/80 backdrop-blur-md rounded-lg z-20 animate-in fade-in duration-300">
-            <XCircle className="w-16 h-16 text白色 mb-4 opacity-80" />
-            <h2 className="text-4xl font-bold text白色 mb-2">GAME OVER</h2>
-            <p className="text-xl text白色/80 mb-6">Score: {score}</p>
-            <button onClick={startGame} className="flex items-center gap-2 px-6 py-3 bg白色 text-red-600 font-bold rounded-full transition-transform hover:scale-105 active:scale-95 shadow-xl">
+            <XCircle className="w-16 h-16 text-white mb-4 opacity-80" />
+            <h2 className="text-4xl font-bold text-white mb-2">GAME OVER</h2>
+            <p className="text-xl text-white/80 mb-6">Score: {score}</p>
+            <button onClick={startGame} className="flex items中心 gap-2 px-6 py-3 bg-white text-red-600 font-bold rounded-full transition-transform hover:scale-105 active:scale-95 shadow-xl">
               <RefreshCcw className="w-5 h-5" />
               TRY AGAIN
             </button>
@@ -149,8 +148,8 @@ export const SnakeGame: React.FC = () => {
 
         {status === GameStatus.PAUSED && (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 backdrop-blur-sm rounded-lg z-20">
-            <h2 className="text-3xl font-bold text白色 mb-6 tracking-widest">PAUSED</h2>
-            <button onClick={togglePause} className="flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text白色 font-bold rounded-full transition-transform hover:scale-105 active:scale-95 shadow-lg">
+            <h2 className="text-3xl font-bold text-white mb-6 tracking-widest">PAUSED</h2>
+            <button onClick={togglePause} className="flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-full transition-transform hover:scale-105 active:scale-95 shadow-lg">
               <Play className="w-5 h-5" fill="currentColor" />
               RESUME
             </button>
